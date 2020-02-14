@@ -1,0 +1,5 @@
+
+.custom-select:disabled, .custom-select[read-only] {
+    color: #6c757d;
+    background-color: #e9ecef;
+}

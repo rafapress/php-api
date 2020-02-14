@@ -1,0 +1,220 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Cadastro</title>
+		<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="src/bootstrap/checkbox.css">
+		<link rel="stylesheet" href="src/style.css">
+	</head>
+	<body>
+		<form id="form" name="form" class="container">
+			<div class="row">
+				<h2 class="col text-center">FTD</h2>
+			</div>
+
+			<br>
+
+			<div id="dados-pessoais" class="row justify-content-center">
+
+				<div class="form-control form-row col-10 offset-1">
+
+					<h5 class="col-10 offset-1 mt-3"> Dados Pessoais </h5>
+
+					<div class="form-group col-10 offset-1">
+						<label for="input-nome">Nome</label>
+						<input id="input-nome" name="nome" type="text" class="form-control" placeholder="Insira seu nome" required>
+						<small id="helper-nome" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+					<div class="form-group col-10 offset-1">
+						<label for="input-email">Email</label>
+						<input id="input-email" name="email" type="email" class="form-control" placeholder="Insira seu e-mail" required>
+						<small id="helper-email" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+					<div class="form-group col-10 offset-1">
+						<label for="input-telefone">Telefone (com DDD) </label>
+						<input id="input-telefone" name="telefone" type="text" class="form-control" placeholder="(DDD) 9 1234-1234  ou  DDD12341234" required pattern="((\([0-9]{2}\))|([0-9]{2}))\s?9?\s?[0-9]{4}(-|\s)?[0-9]{4}">
+						<small id="helper-telefone" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+				</div>
+
+			</div>
+
+			<br>
+
+			<div id="dados-localizacao" class="row justify-content-center">
+
+				<div class="form-control form-row col-10 offset-1">
+
+					<h5 class="col-10 offset-1 mt-3"> Dados da sua localização </h5>
+
+					<div class="form-group col-10 offset-1">
+						<label for="input-estado">Estado</label>
+						<select class="referencied custom-select" read-only="read-only" id="input-estado" name="estado" data-error-referencied="Aguarde o carregamento dos estados" required>
+							<option disabled="disabled" selected="selected" value="">Selecione o Estado</option>
+						</select>
+						<small id="helper-estado" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1">
+						<label for="input-cidade">Cidade</label>
+						<select class="referencied custom-select" read-only="read-only" id="input-cidade" name="cidade" data-error-referencied="Para selecionar a cidade, selecione o estado primeiramente." required>
+							<option disabled="disabled" selected="selected" value="">Selecione a Cidade</option>
+						</select>
+						<small id="helper-cidade" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+				</div>
+
+			</div>
+
+			<br>
+
+			<div id="dados-escola" class="row justify-content-center">
+
+				<div class="form-control form-row col-10 offset-1">
+
+					<h5 class="col-10 offset-1 mt-3"> Dados da Escola </h5>
+
+					<div class="form-group col-10 offset-1">
+						<label for="input-escola">Escola</label>
+						<select class="referencied custom-select" read-only="read-only" id="input-escola" name="escola"  data-error-referencied="Para selecionar a escola, selecione a ciade primeiramente." required>
+							<option disabled="disabled" selected="selected" value="">Selecione a Escola</option>
+						</select>
+						<small id="helper-escola" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1 col-lg-5">
+						<label for="input-instituicao">Tipo de Instituição</label>
+						<select class="custom-select" id="input-instituicao" name="instituicao" required>
+							<option disabled="disabled" selected="selected" value="">Selecione o tipo da Instituição</option>
+							<option value="Privada">Privada</option>
+							<option value="Publica Municipal">Pública Municipal</option>
+							<option value="Pública Estadual">Pública Estadual</option>
+							<option value="Terceiro Setor">Terceiro Setor</option>
+						</select>
+						<small id="helper-instituicao" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1 col-lg-5 offset-lg-0">
+						<label for="input-segmento">Segmento de Atuação</label>
+						<select class="custom-select" id="input-segmento" name="segmento" required>
+							<option disabled="disabled" selected="selected" value="">Selecione a Segmento</option>
+							<option value="Educação Infantil">Educação Infantil</option>
+							<option value="Anos Iniciais do EF">Anos Iniciais do EF</option>
+							<option value="Anos Finais do EF">Anos Finais do EF</option>
+							<option value="Ensino Medio">Ensino Médio</option>
+						</select>
+						<small id="helper-segmento" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1 col-lg-5">
+						<label for="input-modalidade">Modalidade</label>
+						<select class="custom-select" id="input-modalidade" name="modalidade" required>
+							<option disabled="disabled" selected="selected" value="">Selecione a modalidade</option>
+							<option value="EJA">Eduação de Jovens e Adultos</option>
+							<option value="Regular">Regular</option>
+						</select>
+						<small id="helper-modalidade" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1 col-lg-5 offset-lg-0">
+						<label for="input-formacao">Formação Acadêmica</label>
+						<select class="custom-select" id="input-formacao" name="formacao" required>
+							<option disabled="disabled" selected="selected" value="">Selecione sua formação</option>
+							<option value="Ensino Medio">Ensino Médio</option>
+							<option value="Superior Completo">Superior Completo</option>
+							<option value="Superior Incompleto">Superior Incompleto</option>
+							<option value="Mestrado">Mestrado</option>
+							<option value="Doutorado">Doutorado</option>
+							<option value="Especializacao">Especialização</option>
+						</select>
+						<small id="helper-formacao" class="form-text text-danger" style="display: none">
+							<!-- Mensagem de Erro -->
+						</small>
+					</div>
+
+					<div class="form-group col-10 offset-1">
+						<label for="input-disciplina">Selecione as disciplinas lecionadas</label>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Professora Regente"> <span class="label-text">Professora Regente</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Língua Portuguesa"> <span class="label-text">Língua Portuguesa</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Matemática"> <span class="label-text">Matemática</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="História"> <span class="label-text">História</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Geografia"> <span class="label-text">Geografia</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Ciências/Biologia"> <span class="label-text">Ciências/Biologia</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Filosofia/Sociologia"> <span class="label-text">Filosofia/Sociologia</span>
+							</label>
+						</div>
+						<div class="form-check">
+							<label>
+								<input type="checkbox" name="disciplina" value="Outros"> <span class="label-text">Outros</span>
+							</label>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<br>
+
+			<button type="button" name="button" id="enviar" class="row col-10 offset-1 mb-5 btn btn-primary">Enviar</button>
+
+		</form>
+
+		<!-- SCRIPT'S -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+		<script src="src/script.js" charset="utf-8"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.js" charset="utf-8"></script>
+
+	</body>
+</html>
