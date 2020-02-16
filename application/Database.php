@@ -20,8 +20,8 @@
 			else {
 				$this->connection = new \PDO(
 					"mysql:dbname=formulario;host=192.185.176.210;port=3306;charset=UTF8",
-					'FTD',
-					'1212'
+					'Banco',
+					'Senha'
 				);
 			}
 	    }
