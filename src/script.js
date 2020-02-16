@@ -1,5 +1,5 @@
-﻿var api = 'http://ricardosdelima.com.br/FTD/form/public/api';
-// var api = 'http://teste.localhost/api';
+
+var api = 'http://teste.localhost/api';
 
 var disableSelects = function(selects){
 	selects.each(function(){
